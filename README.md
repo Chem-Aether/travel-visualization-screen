@@ -3,19 +3,14 @@
 VUE3 组合式API开发，使用ECharts、axios、Pinia库
 使用了v-scale-screen 固定长宽比，做大屏适配
 
-##主要功能
+## 主要功能
 展示个人旅行足迹，车票机票信息，航线图，已探索机场和火车站，搭乘航空公司统计，搭乘铁路车型统计，已打卡旅游景区统计
+###当前仅支持中国地图
 
-注：当前仅支持中国地图
-
-##说明
+## 说明
 本项目是前端项目，已写入请求接口，须配合后端服务器才能正常使用，预制的API接口见后文
 
-###项目介绍
-[哔哩哔哩 介绍](https://www.bilibili.com/video/BV1Pj41147iq/?share_source=copy_web&vd_source=89d988dcd2567d64b46044f646b2c0d0)
-
-## 如何开始
-
+## Project Setup  如何开始
 ###安装依赖
 
 ```sh
@@ -33,14 +28,14 @@ npm run dev
 ```sh
 npm run build
 ```
-##API说明文档
+## API说明文档
 
-###getTotalData
+### getTotalData
 - 功能：**请求已探索多少省市区**
 - 请求方法：GET
 - 参数：null
 
-#####返回示例
+##### 返回示例
 ```json
 {
     "province":5,
@@ -49,7 +44,7 @@ npm run build
 }
 ```
 
-###getGeoData
+### getGeoData
 - 功能：**请求GeoJson标准地图文件**
 - 请求方法：POST
 - 参数：code
@@ -61,7 +56,7 @@ npm run build
 | china  | 中国地图 |
 | 110000 |  北京市  |
 
-###getStatisticsData
+### getStatisticsData
 - 功能：**获取航空/铁路统计数据**
 - 请求方法：POST
 - 参数：type
@@ -74,7 +69,7 @@ npm run build
 | Flight |    航空数据    |
 | Train  |    铁路数据    |
 
-#####返回示例
+##### 返回示例
 ```json
 {
   "panel1":{
@@ -103,7 +98,7 @@ npm run build
 }
 ```
 
-###getTicketData
+### getTicketData
 - 功能：**获取车票机票信息**
 - 请求方法：POST
 - 参数：type
@@ -116,7 +111,7 @@ npm run build
 | Flight |      机票数据       |
 | Train  |    铁路车票数据     |
 
-#####返回示例
+##### 返回示例
 ```json
 [
     {
@@ -139,7 +134,7 @@ npm run build
 ]
 ```
 
-###getScenicSpotData
+### getScenicSpotData
 - 功能：**获取景区足迹**
 - 请求方法：POST
 - 参数：code
@@ -151,7 +146,7 @@ npm run build
 | china  | 中国地图 |
 | 110000 |  北京市  |
 
-#####返回示例
+##### 返回示例
 ```json
 [
     {
@@ -168,7 +163,7 @@ npm run build
   ]
 ```
 
-###getCityPercentSourceData
+### getCityPercentSourceData
 - 功能：**获取柱状图统计数据**
 - 请求方法：POST
 - 参数：code
@@ -180,7 +175,7 @@ npm run build
 | china  | 中国地图 |
 | 110000 |  北京市  |
 
-#####返回示例
+##### 返回示例
 ```json
 [
     {
@@ -199,11 +194,11 @@ npm run build
 ]
 ```
 
-###getAirportData
+### getAirportData
 - 功能：**获取地图中已探索的机场**
 - 请求方法：GET
 
-#####返回示例
+##### 返回示例
 ```json
 [
     {
@@ -214,11 +209,11 @@ npm run build
 ]
 ```
 
-###getRailwayStationData
+### getRailwayStationData
 - 功能：**获取地图中已探索的火车站**
 - 请求方法：GET
 
-#####返回示例
+##### 返回示例
 
 ```json
 [
@@ -230,11 +225,11 @@ npm run build
 ]
 ```
 
-###getPlaneRouteData
+### getPlaneRouteData
 - 功能：**获取地图中已探索的航线**
 - 请求方法：GET
 
-#####返回示例
+##### 返回示例
 
 ```json
 [
