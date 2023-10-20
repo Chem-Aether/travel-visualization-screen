@@ -1,29 +1,32 @@
-# vue-project
+# travel-visualization-screen
 
-This template should help get you started developing with Vue 3 in Vite.
+VUE3 组合式API开发，使用ECharts、axios、Pinia库
+使用了v-scale-screen 固定长宽比，做大屏适配
+##主要功能
+展示个人旅行足迹，车票机票信息，航线图，已探索机场和火车站，搭乘航空公司统计，搭乘铁路车型统计，已打卡旅游景区统计
+###当前仅支持中国地图
 
-## Recommended IDE Setup
+##说明
+本项目是前端项目，已写入请求接口，须配合后端服务器才能正常使用，预制的API接口见后文
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+## Project Setup  如何开始
+###安装依赖
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+### 运行项目
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
+### 
 
 ```sh
 npm run build
 ```
+##API说明文档
+getTotalData
+getGeoData
