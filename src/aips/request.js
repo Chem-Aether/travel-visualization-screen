@@ -1,14 +1,5 @@
 import axios from 'axios';
 
-//获取public下文件
-export async  function Public(url){
-    let req;
-    await axios.get(url).then(res => {
-      req = res.data
-  });
-    return req
-};
-
 export function request(config) {
     //axios实例
     const instance = axios.create({

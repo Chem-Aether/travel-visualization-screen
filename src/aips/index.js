@@ -85,10 +85,10 @@ export async function getScenicSpotData(code='china') {
 }
 
 //获取柱状图统计数据
-export async function getBarData(code='china') {
+export async function getCityPercentSourceData(code='china') {
     let data;
     await request({
-        url:'/getBarData',
+        url:'/getCityPercentSourceData',
         method:'post',
         data:{
             code:code

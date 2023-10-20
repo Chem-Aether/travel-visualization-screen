@@ -26,9 +26,9 @@ const { Fresh, ShowAirport, ShowRoute, ShowTrain } = storeToRefs(useMapShowConfi
 
 
 //网络请求
-import {getBarData, getAirportData, getPlaneRouteData, getRailwayStationData, getScenicSpotData} from '../aips';
+import {getCityPercentSourceData, getAirportData, getPlaneRouteData, getRailwayStationData, getScenicSpotData} from '../aips';
 // //请求柱状图探索信息
-Promise.all([getBarData(),getAirportData(), getPlaneRouteData(),getRailwayStationData()]).then(
+Promise.all([getCityPercentSourceData(),getAirportData(), getPlaneRouteData(),getRailwayStationData()]).then(
   ([A,B,C,D]) => {
     CityPercentSource.value = A;
     Route.value= B;
@@ -274,7 +274,7 @@ onMounted(() => {
 
 watch(MapCode,() => {
   console.log('geodata已变化');
-  Promise.all([getGeoData(MapCode.value),getBarData(MapCode.value) , getScenicSpotData()]).then(
+  Promise.all([getGeoData(MapCode.value),getCityPercentSourceData(MapCode.value) , getScenicSpotData()]).then(
     ([geodata,bardata,spotdata]) => {
       GeoData = geodata;
       CityPercentSource.value = bardata;
