@@ -11,7 +11,7 @@ VUE3 组合式API开发，使用ECharts、axios、Pinia库
 本项目是前端项目，已写入请求接口，须配合后端服务器才能正常使用，预制的API接口见后文
 
 ## Project Setup  如何开始
-###安装依赖
+### 安装依赖
 
 ```sh
 npm install
