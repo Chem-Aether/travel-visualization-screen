@@ -1,6 +1,9 @@
 <template>
   <div class="Right">
-    <SmallTittle  style="margin-bottom: 10px;">机票/车票统计</SmallTittle>
+    <div class="Tittle">
+      <SmallTittle  style="margin-bottom: 10px;">机票/车票统计</SmallTittle>
+    </div>
+
     <div class="RightTable" ref="Scroll" @wheel="JSScroll">
       <Ticket />
     </div>
@@ -32,14 +35,19 @@ function JSScroll(event){
 .Right{
   box-sizing:border-box;
   padding: 5px 10px;
-  height: 1015px;
+  padding-bottom: 0px;
+  height: 1020px;
   width: 560px;
   background-color: rgba(81, 46, 238, 0.044);
+}
+.Tittle {
+  box-sizing:border-box;
+  height: 45px;
 }
 
 .RightTable{
     width: 540px;
-    height: 660px;
+    height: 665px;
   
     overflow-x: auto;
     overflow-y: hidden;  
@@ -51,6 +59,8 @@ function JSScroll(event){
     flex-direction: column;
 }
 .RightModel{
+  box-sizing:border-box;
+
   width: 540px;
   height: 300px;
 
