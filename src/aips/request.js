@@ -5,7 +5,7 @@ export function request(config) {
     const instance = axios.create({
         // baseURL: 'https://api.seniverse.com/v3/weather/',
         // baseURL: 'http://localhost:5173',
-        baseURL: 'http://10.21.131.184:8080',
+        baseURL: 'http://localhost:8080/',
         timeout: 5000,
       });
 
