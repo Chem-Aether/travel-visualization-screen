@@ -12,7 +12,8 @@
     "echarts": "^5.4.3",
     "pinia": "^2.1.6",
     "v-scale-screen": "^2.2.0",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vue-router": "^4.3.2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.3.4",
