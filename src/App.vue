@@ -13,13 +13,14 @@
 >
     <div class="BodyMain">
       <Header tittle="旅行足迹可视化平台"/>
-      <!-- <MainWindow /> -->
+      <MainWindow />
       
-      <router-view></router-view>
+      <!-- <router-view></router-view> -->
       
     </div>
 
 </v-scale-screen></suspense>
+
 </template>
 
 

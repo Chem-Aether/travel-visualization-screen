@@ -1,7 +1,6 @@
 <template>
   <div class="headr">
       <span class="header-text">{{ tittle }}</span>
-      <router-link to="/ScenicSpot">aaa</router-link>
   </div>
 
 </template>

@@ -34,6 +34,7 @@ import { getTicketData, getStatisticsData} from '@/aips';
 getStatisticsData().then(
   (res) => {
     PanelDataSource.value = res
+    console.log(PanelDataSource.value )
   }
 )
 

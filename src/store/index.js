@@ -27,7 +27,7 @@ export const useMapShowConfigStore = defineStore('MapShowConfig',() => {
 export const usePanelDataSourceStore = defineStore('PanelDataSource', () => {
 
     //左侧两面板数据源
-    let PanelDataSource = ref();
+    const PanelDataSource = ref();
     //车票机票数据源
     const TicketDataSource = ref();
     //旅游景点数据源

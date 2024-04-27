@@ -255,6 +255,7 @@ function CreateMapOption(name,MapData = [],route = true,airport = true,train = t
 import * as echarts from 'echarts';
 var myChart = null;
 onMounted(() => {
+  
   myChart = echarts.init(charts.value);
   echarts.registerMap(MapCode.value, GeoData);
   
