@@ -7,12 +7,13 @@ const router = createRouter({
     {
       path: '/',
       name: 'MainWindow',
+      // component: () => import('../components/MainWindow/BarCharts.vue')
       component: () => import('../components/MainWindow/MainWindow.vue')
     },
     {
-      path: '/ScenicSpot',
-      name: 'ScenicSpot',
-      component: () => import('../views/Home.vue')
+      path: '/SpotsMsg',
+      name: 'SpotsMsg',
+      component: () => import('../views/SpotsMsg.vue')
     },
   ]
 })

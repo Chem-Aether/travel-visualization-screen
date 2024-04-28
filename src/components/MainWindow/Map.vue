@@ -27,15 +27,15 @@ const { Fresh, ShowAirport, ShowRoute, ShowTrain } = storeToRefs(useMapShowConfi
 
 //网络请求
 import {getCityPercentSourceData, getAirportData, getPlaneRouteData, getRailwayStationData, getScenicSpotData} from '@/aips';
-// //请求柱状图探索信息
-Promise.all([getCityPercentSourceData(),getAirportData(), getPlaneRouteData(),getRailwayStationData()]).then(
-  ([A,B,C,D]) => {
-    CityPercentSource.value = A;
-    Route.value= B;
-    Airport.value = C;
-    RailwayStation.value = D;
-  }
-)
+// // //请求柱状图探索信息
+// Promise.all([getCityPercentSourceData(),getAirportData(), getPlaneRouteData(),getRailwayStationData()]).then(
+//   ([A,B,C,D]) => {
+//     CityPercentSource.value = A;
+//     Route.value= B;
+//     Airport.value = C;
+//     RailwayStation.value = D;
+//   }
+// )
 
 
 //取Dom元素

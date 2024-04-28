@@ -13,7 +13,7 @@
 </template>
   
 <script setup>
-import {onMounted, ref, watch} from 'vue'
+import {onMounted, ref, watch,nextTick} from 'vue'
 import * as echarts from 'echarts';
 
 //导入pinia数据
@@ -30,13 +30,7 @@ const {PanelDataSource,TicketDataSource } = storeToRefs(DataSourceStore)
 
 
 import { getTicketData, getStatisticsData} from '@/aips';
-//获取航空铁路统计数据
-getStatisticsData().then(
-  (res) => {
-    PanelDataSource.value = res
-    console.log(PanelDataSource.value )
-  }
-)
+
 
 
 watch(PanelType,() => {
@@ -202,13 +196,22 @@ var IsPie = ref(false);
 //初始化挂载
 var PieChart = null;
 onMounted(() => {
-  PieChart = echarts.init(Pie.value);
-  PieChart.setOption(CreatePieOption(PanelDataSource.value.panel2.data,IsPie.value),true);
+  //获取航空铁路统计数据
+  getStatisticsData().then(
+    (res) => {
+      PanelDataSource.value = res
+      console.log(PanelDataSource.value )
+      nextTick(() => {
+        console.log('DOM 已更新');
+        PieChart = echarts.init(Pie.value);
+        PieChart.setOption(CreatePieOption(PanelDataSource.value.panel2.data,IsPie.value),true); 
+      }); 
+    }
+  )
 })  
 //按钮切换事件
 function ChangeChart(){
   IsPie.value=!IsPie.value;
-  console.log(PanelDataSource.value.panel2.data,'099');
   PieChart.setOption(CreatePieOption(PanelDataSource.value.panel2.data,IsPie.value),true);
 }
 

@@ -13,8 +13,9 @@
       <button class="MapButton" @click="Plane">航线地图</button>
       <button class="MapButton" @click="Train">铁路地图</button>      
     </div>
-          <Map class="center-2"/>
-          <BarCharts class="center-3"/>
+          <Center />
+          <!-- <Map class="center-2"/>
+          <BarCharts class="center-3"/> -->
         </div>  
         
       <RightTable class="right-1"/> 
@@ -30,6 +31,7 @@ import Map from '@/components/MainWindow/Map.vue'
 import BarCharts from '@/components/MainWindow/BarCharts.vue'
 import TittleMsg from '@/components/MainWindow/TittleMsg.vue'
 import RightTable from '@/components/MainWindow/RightTable.vue'
+import Center from '@/components/MainWindow/Center.vue'
 
 
 //导入pinia数据

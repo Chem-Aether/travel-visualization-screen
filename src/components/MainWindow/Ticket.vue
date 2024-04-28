@@ -23,7 +23,7 @@
 </template>
   
 <script setup>
-import { ref } from 'vue'
+import { ref , nextTick} from 'vue'
 
 //导入pinia数据
 import { storeToRefs  } from 'pinia'
@@ -40,6 +40,7 @@ getTicketData().then(
     TicketDataSource.value = res;
   }
 )
+
 
 //随机颜色盘
 const color=ref([

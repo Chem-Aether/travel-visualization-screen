@@ -8,7 +8,7 @@
 </template>
 
 <script setup>
-import {onMounted, ref, watch} from 'vue'
+import {onMounted, ref, watch, nextTick} from 'vue'
 import * as echarts from 'echarts';
 
 //导入pinia数据
@@ -26,6 +26,9 @@ const {CityPercentSource } = storeToRefs(DataSourceStore)
 
 //取DOM元素
 const Bar = ref();
+import {getCityPercentSourceData} from '@/aips'
+//初始化地图数据
+CityPercentSource.value = await getCityPercentSourceData('china')
 
 //渐变色方案
   const yData1GradientColor = [
@@ -159,8 +162,8 @@ function CreateBarOption(Data) {
 //初始化挂载
 var myChart = null;
 onMounted(() => {
-  myChart = echarts.init(Bar.value);
-  myChart.setOption(CreateBarOption(CityPercentSource.value),true);
+    myChart = echarts.init(Bar.value);
+    myChart.setOption(CreateBarOption(CityPercentSource.value),true);
 })
 
 watch(CityPercentSource,() => {

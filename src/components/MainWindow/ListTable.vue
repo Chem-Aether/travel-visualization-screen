@@ -4,6 +4,7 @@
       <SmallTittle  style="margin-bottom: 10px;">行程统计</SmallTittle>
       <div class="Content" ref="AutoScroll" @mouseenter="mEnter" @mouseleave="mLeave" @wheel="mScroll">
         <div class="column" v-for="each, index in ScenicSpotSource" >
+          <a href="/SpotsMsg">
           <div class="columnContent">
             <div class="ID">{{ index+1 }}</div>
             <div class="Msg">
@@ -16,6 +17,7 @@
             <div class="Rank" v-html="SetText(each.Rank)"></div>
           </div>
           <div class="UnderLine"></div>
+          </a>
         </div>           
       </div>          
     </Border>    
@@ -36,18 +38,25 @@ const {ScenicSpotSource } = storeToRefs(DataSourceStore)
 //网络请求
 import {getScenicSpotData} from '@/aips';
 //请求景点信息
-getScenicSpotData().then(
-  (res) => {
-    ScenicSpotSource.value = res
-  }
-)
+// getScenicSpotData().then(
+//   (res) => {
+//     ScenicSpotSource.value = res
+//   }
+// )
 
 //获取DOM
 const AutoScroll = ref()
 //定时器
 let Timer = null;
 onMounted(()=>{
-  Timer = setInterval(scroll,10);  
+  //请求景点信息
+getScenicSpotData().then(
+  (res) => {
+    ScenicSpotSource.value = res;
+    Timer = setInterval(scroll,10);  
+  }
+)
+  
 })
 
 function scroll(){

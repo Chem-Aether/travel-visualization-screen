@@ -13,9 +13,9 @@
 >
     <div class="BodyMain">
       <Header tittle="旅行足迹可视化平台"/>
-      <MainWindow />
+      <!-- <MainWindow /> -->
       
-      <!-- <router-view></router-view> -->
+      <router-view></router-view>
       
     </div>
 
@@ -44,6 +44,11 @@ import MainWindow from '@/components/MainWindow/MainWindow.vue'
   height: 100%;
   background-position: center center;
   background-image: url('@/assets/img/pageBg.png');
+
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
 }
 
 </style>
